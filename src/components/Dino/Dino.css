@@ -1,9 +1,22 @@
 .game {
-    width: 600px;
-    height: 225px;
-    border: 1px solid black;
-    margin: auto;
-  }
+  width: 600px;
+  height: 225px;
+  border: 1px solid black;
+  margin: auto;
+  position: relative;
+  padding-top: 50px; /* Add padding to move the ground down */
+}
+
+#ground {
+  width: 100%;
+  height: 75px;
+  background-image: url("img/land.png");
+  position: absolute;
+  bottom: -65px; /* Adjust this value to move the ground lower from the bottom */
+  left: 0;
+  background-size: contain;
+  background-repeat: repeat-x; /* Repeat the image horizontally */
+}
   
   #dino {
     width: 50px;
@@ -48,7 +61,7 @@
     left: 580px;
     background-image: url("img/cactus.png");
     background-size: 20px 40px;
-    animation: block 1s infinite linear;
+    animation: block 2s infinite linear;
   }
   
   @keyframes block {
@@ -60,3 +73,4 @@
       left: -5px;
     }
   }
+
