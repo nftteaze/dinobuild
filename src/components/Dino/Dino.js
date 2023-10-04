@@ -39,8 +39,17 @@ function Dino() {
   });
 
   useEffect(() => {
-    document.addEventListener("keydown", jump);
-    return () => document.removeEventListener("keydown", jump);
+    const handleJump = () => {
+      jump();
+    };
+
+    document.addEventListener("keydown", handleJump);
+    document.addEventListener("touchstart", handleJump);
+
+    return () => {
+      document.removeEventListener("keydown", handleJump);
+      document.removeEventListener("touchstart", handleJump);
+    };
   }, []);
 
   return (
